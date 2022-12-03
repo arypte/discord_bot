@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-from to import Token
+
+Token = open("token", "r").readline()
 
 intents = discord.Intents.default()
 intents.members = True
