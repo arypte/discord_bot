@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
-
-Token = open("to", "r").readline()
+from to import Token
 
 intents = discord.Intents.default()
 intents.members = True
@@ -31,4 +30,4 @@ bot.run(Token)
 
 # 드라마 추천
 # 제목 , 태그 , 방송사
-# 간단한 게임 수도 퀴
+# 간단한 게임 수도 
