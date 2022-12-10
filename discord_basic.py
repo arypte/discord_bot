@@ -1,65 +1,79 @@
 import discord
-from discord.ext import commands
-from to import Token
-import requests
 import youtube_dl
+import nest_asyncio
+
+
+from discord.ext import commands
+from to import Token , ydl_opts , func1 , func2
+from cro import temper , s_r
+from discord.voice_client import VoiceClient
+from discord import FFmpegPCMAudio
+from youtube_dl import YoutubeDL
+
+nest_asyncio.apply()
 
 
 intents = discord.Intents.default()
 intents.members = True
 
 bot = commands.Bot(command_prefix='!',intents=discord.Intents.all())
+ydl = YoutubeDL(ydl_opts)
 
 
 @bot.event
 async def on_ready():
-    print('로그인중입니다. ')
-    print(f"봇={bot.user.name}로 연결중")
     print('연결이 완료되었습니다.')
     await bot.change_presence(status=discord.Status.online, activity=None)
-    
+
 
 @bot.command()
-async def 안녕(ctx):
-    await ctx.send("안녕하세요")
-    
+async def Hello(ctx):
+    await ctx.send('Hello!')
+
 @bot.command()
-async def song_start(voice, url):
-    try:
-        if not voice.is_playing() and not voice.is_paused():
-            ydl_opts = {'format': 'bestaudio'}
-            FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
-            with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                info = ydl.extract_info(f'https://www.youtube.com{url}', download=False) # 파일로 다운로드 하지 않고 재생
-                URL = info['formats'][0]['url']
-            
-            voice.play(discord.FFmpegPCMAudio(URL, **FFMPEG_OPTIONS))
-        #voice.play(discord.FFmpegPCMAudio(executable = './ffmpeg-4.4-full_build-shared/bin/ffmpeg.exe', source='./song.mp3'))
+async def Play(ctx, *, song_title: str):
+    # search for the song on YouTube
+    ydl_opts = {
+        'default_search': 'ytsearch',
+        'quiet': True,
+    }
+    ydl = youtube_dl.YoutubeDL(ydl_opts)
+    info = ydl.extract_info(song_title, download=False)
 
-        while voice.is_playing() or voice.is_paused():
-            await asyncio.sleep(0.1)
-    except:
-        return
+    song_url = info['entries'][0]['webpage_url']
 
-@bot.command(aliases = ['play', 'p', 'ㅔ'])
-async def Play(ctx,*,  keyword):
-    try:
-        results = YoutubeSearch(keyword, max_results=1).to_dict() # title과 url_suffix를 사용. 자세한 내용은 하단 링크 참고
+    voice_client = await ctx.author.voice.channel.connect()
+    player = discord.FFmpegPCMAudio(song_url)
+    player = discord.PCMVolumeTransformer(player)
+    voice_client.play(player, after=lambda: print('done'))
 
-        channel = ctx.author.voice.channel
-        if bot.voice_clients == []:
-            await channel.connect()
-            #await ctx.send("connected to the voice channel, " + str(bot.voice_clients[0].channel))
-        voice = bot.voice_clients[0]
-        
-        await song_start(voice, results[0]['url_suffix'])
-    except:
-        await ctx.send("Play Error")
+@bot.command()
+async def Leave(ctx):
+    await bot.voice_clients[0].disconnect()
+
+@bot.command()
+async def Menu(ctx):
+    d = func1()
+    output = d
+    await ctx.send(output + "추천" )
+
+@bot.command()
+async def Help(ctx):
+    commands = [
+    ("hello", "인사를 합니다."),
+    ("cody", "온도와 날씨, 그리고 거기에 맞는 옷을 추천합니다."),
+    ("Menu" , "메뉴를 추천해줍니다.") ,
+    ("play title", "현재 들어가 있는 보이스 채널에서 title을 재생합니다"), ]
+    output = "\n".join([f"!{command}: {description}" for command, description in commands])
+    await ctx.send(output)
+
+print( temper , s_r ) 
+
+@bot.command()
+async def Cody(ctx):
+    await ctx.send( "날씨 : " + temper + "°C " + s_r + "\n" )
+    cmp = float(temper)
+    output = func2( cmp )
+    await ctx.send( output )
 
 bot.run(Token)
-
-
-# 드라마 추천
-# 제목 , 태그 , 방송사
-# 명령어 있으면 유툽에서 , 없으면 멜론 차트 1위부터 플레이
-# 음악봇, 멜론 차트 플레이 ,
