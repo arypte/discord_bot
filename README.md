@@ -4,7 +4,7 @@
 
 
 > '디스코드'는 게임을 좋아하는 사람들은 대부분 써
->> ...by using additional greater-than signs right next to each other...
+>> AA
 > > > ...or with spaces between arrows.
 
 
@@ -19,6 +19,17 @@
 | play title | 보이스 채널에서 title을 재생합니다 |
 
 ## [시연](https://github.com/arypte/discord_bot/tree/master/%EC%8B%9C%EC%97%B0%EB%AA%A8%EC%8A%B5)
+
+> 디스코드 서버에 초대하여 이용하는 경우
+>> + 봇은 서버 주인만 초대할 수 있습니다
+>> + 디스코드에서 서버를 신규 생성한 후,
+   [링크](https://discord.com/api/oauth2/authorize?client_id=1048451699204948098&permissions=0&scope=bot)를 사용하여 봇을 초대해주세요.
+>> + 봇이 들어온 후 명령어를 사용합니다.
+
+> 직접 코드를 사용하여 실행하는 경우
+>> + [디스코드 개발자 웹](https://discord.com/developers/applications/)에 접속합니다.
+>> + 새로운 봇을 만들고 토큰 키를 받아와 코드에 첨부합니다.
+>> + 명령어를 사용합니다.
 
 
 ## 그 외
@@ -49,3 +60,15 @@
 + [디스코드 봇](https://koreanbots.dev/)
 
     개발자 페이지에서 Discord.py 기본 코드를 인용하였습니다.
+    
+<details>
+<summary>접기/펼치기 버튼</summary>
+<div markdown="1">
+
+|제목|내용|
+|--|--|
+|1|1|
+|2|10|
+
+</div>
+</details>
