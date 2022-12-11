@@ -32,6 +32,7 @@
     - requests
     - bs4 (BeautifulSoup)
     - urllib
+    - ffmpeg
 
 
 > 아래는 프로젝트를 개발하면서 코드 일부 인용 및 참고한 사이트 입니다.
