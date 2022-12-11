@@ -31,8 +31,9 @@ async def Hello(ctx):
     await ctx.send('Hello!')
 
 @bot.command()
-async def Play(ctx, *, song_title: str):
+async def Play(ctx, *, song_title):
     # search for the song on YouTube
+    await ctx.send( song_title + " 재생")
     ydl_opts = {
         'default_search': 'ytsearch',
         'quiet': True,
@@ -49,6 +50,7 @@ async def Play(ctx, *, song_title: str):
 
 @bot.command()
 async def Leave(ctx):
+    await ctx.send( "재생 종료")
     await bot.voice_clients[0].disconnect()
 
 @bot.command()
@@ -63,7 +65,8 @@ async def Help(ctx):
     ("hello", "인사를 합니다."),
     ("cody", "온도와 날씨, 그리고 거기에 맞는 옷을 추천합니다."),
     ("Menu" , "메뉴를 추천해줍니다.") ,
-    ("play title", "현재 들어가 있는 보이스 채널에서 title을 재생합니다"), ]
+    ("Play title", "현재 들어가 있는 보이스 채널에서 title을 재생합니다"), 
+    ("Leave", "음악을 종료합니다."), ]
     output = "\n".join([f"!{command}: {description}" for command, description in commands])
     await ctx.send(output)
 
