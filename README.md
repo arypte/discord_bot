@@ -1,4 +1,4 @@
-# discord_bot
+![Image](https://user-images.githubusercontent.com/108267207/206887668-a3ba847a-ef73-43a3-9718-9f23b2f91427.png)
 ## 디스코드 종합 봇
 ---
 ~24시간 사용가능~
@@ -62,7 +62,10 @@
 + [디스코드 봇](https://koreanbots.dev/)
 
     개발자 페이지에서 Discord.py 기본 코드를 인용하였습니다.
+    
++ [Markdown-it](https://markdown-it.github.io/)
 
+    ReadMe파일 작성에 필요한 마크다운 문법을 참고.
 
 ## 문제점 및 개선점
 <details>
