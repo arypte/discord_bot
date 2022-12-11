@@ -17,7 +17,7 @@
 | Hello   | 인사를 합니다. |
 | Cody | 온도와 날씨, 그리고 거기에 맞는 옷을 추천합니다. |
 | Menu    | 메뉴를 추천해줍니다.|
-| play title | 보이스 채널에서 title을 재생합니다 |
+| play title | 보이스 채널에서 title을 재생합니다. ( youtube에서 title을 검색후 가장 첫 영상 재생 ) |
 
 ## [시연](https://github.com/arypte/discord_bot/tree/master/%EC%8B%9C%EC%97%B0%EB%AA%A8%EC%8A%B5)
 
