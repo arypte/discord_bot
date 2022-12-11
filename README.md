@@ -34,14 +34,14 @@
 > + 명령어를 사용합니다.
 
 <details>
-<summary>더보기</summary>
+<summary>시연 스크린샷</summary>
 <div markdown="1">
 
 ![Hello](https://user-images.githubusercontent.com/108267207/206887888-b00c4932-c6c8-4c5b-b376-cd4a1d666984.png)
 ![Help](https://user-images.githubusercontent.com/108267207/206887889-71fb3b56-82f6-4e3d-822a-35162cf9a5b0.png)
-![Leave](https://user-images.githubusercontent.com/108267207/206887890-84fa4031-793e-425f-aeaf-8435f2ac92d5.png)
 ![Menu](https://user-images.githubusercontent.com/108267207/206887891-e814917d-2bb4-49cb-be72-cdd2f5a69394.png)
 ![Play](https://user-images.githubusercontent.com/108267207/206887892-652d573d-e6b1-4fe5-a463-44c235b36204.png)
+![Leave](https://user-images.githubusercontent.com/108267207/206887890-84fa4031-793e-425f-aeaf-8435f2ac92d5.png)
 
 </div>
 </details>
