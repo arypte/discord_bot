@@ -18,7 +18,7 @@
 | Menu    | 메뉴를 추천해줍니다.|
 | play title | 보이스 채널에서 title을 재생합니다 |
 
-## 시연
+## [시연](https://github.com/arypte/discord_bot/tree/master/img)
 
 
 ## 그 외
