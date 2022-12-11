@@ -17,7 +17,8 @@
 | Hello   | 인사를 합니다. |
 | Cody | 온도와 날씨, 그리고 거기에 맞는 옷을 추천합니다. |
 | Menu    | 메뉴를 추천해줍니다.|
-| play title | 보이스 채널에서 title을 재생합니다. ( youtube에서 title을 검색후 가장 첫 영상 재생 ) |
+| Play title | 보이스 채널에서 title을 재생합니다. ( youtube에서 title을 검색후 가장 첫 영상 재생 ) |
+| Leave | 음악을 종료합니다. |
 
 ## [시연](https://github.com/arypte/discord_bot/tree/master/%EC%8B%9C%EC%97%B0%EB%AA%A8%EC%8A%B5)
 
@@ -89,6 +90,8 @@
       2. 최신버전의 라이브러리를 사용해서 모든 곳에서 동일하게 사용하도록 업데이트.
 
       3. 온도에 맞는 옷에서 실제 활용 가능한 코디로 변경, 데이터베이스를 사용할 것.
+ 
+      4. 음악 재생 - 리스트, 다음곡, 중지등 편의기능 추가
 
 
 </div>
